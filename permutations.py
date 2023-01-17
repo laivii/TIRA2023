@@ -1,25 +1,19 @@
 def count(a, b):
-    pituus = len(a)
-    jono1 = a
-    jono2 = b
     indeksit = []
     aiemmin = 0
 
-    for _ in range(pituus):
-        indeksit.append([0,0])
+    for _ in range(len(a)):
+        indeksit.append([0])
 
-    for i in range(pituus):
-        luku = jono1[i]
+    for i in range(len(a)):
+        luku = a[i]
         kohta = luku-1
-        indeksit[kohta][0] = i+1
+        indeksit[kohta] = i+1
 
-    for j in range(pituus):
-        luku = jono2[j]
+    for j in range(len(b)):
+        luku = b[j]
         kohta = luku-1
-        indeksit[kohta][1] = j+1
-    
-    for k in range(pituus):
-        if indeksit[k][0] < indeksit[k][1]:
+        if indeksit[kohta] < j+1:
             aiemmin += 1
 
     return aiemmin
