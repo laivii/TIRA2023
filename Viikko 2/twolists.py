@@ -2,17 +2,16 @@ def count(a, b):
     lista1 = a
     lista2 = b
     pituus = len(lista1)
+    paikat = {}
     aiemmin = 0
 
-    if lista1 == lista2:
-        return aiemmin
-    
     for i in range(pituus):
-        arvo = lista1[i]
-        paikka = lista2.index(arvo)
+        paikat[lista1[i]] = i
 
-        if i < paikka:
-            aiemmin += 1
+    for i in range(pituus):
+        if lista2[i] in paikat:
+            if paikat[lista2[i]] < i:
+                aiemmin += 1
 
     return aiemmin
 
